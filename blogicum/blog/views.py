@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
 posts = [
     {
         'id': 0,
@@ -46,18 +45,15 @@ posts = [
 
 
 def index(request):
-    template = 'blog/index.html'
     context = {'posts': posts}
-    return render(request, template, context)
+    return render(request, 'blog/index.html', context)
 
 
 def post_detail(request, id):
-    template = 'blog/detail.html'
     context = {'post': posts[id]}
-    return render(request, template, context)
+    return render(request, 'blog/detail.html', context)
 
 
 def category_posts(request, category_slug):
-    template = 'blog/category.html'
     context = {'category': category_slug}
-    return render(request, template, context)
+    return render(request, 'blog/category.html', context)
